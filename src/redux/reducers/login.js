@@ -16,7 +16,9 @@ const saveLoginReducer = (state = INITIAL_STATE, action) => {
   case SAVE_LOGIN:
     return {
       ...state,
-      player: { ...state.player, name: action.payload },
+      player: { ...state.player,
+        name: action.payload.name,
+        gravatarEmail: action.payload.email },
     };
   default:
     return state;

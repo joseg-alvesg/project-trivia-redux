@@ -1,5 +1,5 @@
-/* const INITIAL_STATE = {
-  token: '',
+const INITIAL_STATE = {
+  token: '', // * session token da Trivia API
   player: {
     name: '',
     gravatarEmail: '',
@@ -8,11 +8,11 @@
   },
   ranking: [
     {
-      name: '',
+      name: '', // * nome_da_pessoa
       score: 0,
-      picture: '',
+      picture: '', // * url_da_foto_no_gravatar
     },
   ],
 };
 
-export default INITIAL_STATE; */
+export default INITIAL_STATE;

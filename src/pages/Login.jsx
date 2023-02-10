@@ -34,7 +34,7 @@ export default class Login extends Component {
             value={ email }
             placeholder="Qual é o sei email do gravatar"
             onChange={ this.handleChange }
-            data-testid="input-player-email"
+            data-testid="input-gravatar-email"
           />
           <input
             type="text"

@@ -2,9 +2,6 @@ import {
   ADD_COUNTER,
   ADD_POINT,
   END_GAME,
-  FETCH_QUESTION_ERROR,
-  FETCH_QUESTION_LOADING,
-  FETCH_QUESTION_SUCCESS,
   NEXT_QUESTION,
   QUESTION_RESULT,
   SELECT_ANSWER,
@@ -24,21 +21,6 @@ export const addPoint = (payload) => ({
 
 export const endGame = (payload) => ({
   type: END_GAME,
-  payload,
-});
-
-export const fetchQuestionLoading = (payload) => ({
-  type: FETCH_QUESTION_LOADING,
-  payload,
-});
-
-export const fetchQuestionSuccess = (payload) => ({
-  type: FETCH_QUESTION_SUCCESS,
-  payload,
-});
-
-export const fetchQuestionError = (payload) => ({
-  type: FETCH_QUESTION_ERROR,
   payload,
 });
 

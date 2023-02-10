@@ -1,4 +1,7 @@
-import { FETCH_SESSION_TOKEN_LOADING } from '../../constants';
+import {
+  FETCH_SESSION_TOKEN_LOADING,
+  FETCH_SESSION_TOKEN_SUCCESS,
+  SAVE_LOGIN } from '../../constants';
 import INITIAL_STATE from '../../constants/initialState';
 
 const saveLoginReducer = (state = INITIAL_STATE, action) => {

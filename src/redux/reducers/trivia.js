@@ -1,6 +1,7 @@
 import {
   ADD_COUNTER,
   ADD_POINT,
+  QUESTION_RESULT,
   // SELECT_ANSWER,
   // START_TIMER,
   // STOP_TIMER,

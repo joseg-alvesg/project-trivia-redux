@@ -35,6 +35,6 @@ export const fetchSessionTokenError = (payload) => ({
   payload,
 });
 
-//TODO: criar thunk do SESSION TOKEN aqui
+// TODO: criar thunk do SESSION TOKEN aqui
 
-//TODO: criar thunk do QUESTION aqui
+// TODO: criar thunk do QUESTION aqui

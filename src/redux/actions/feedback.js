@@ -5,7 +5,7 @@ export const gameResult = (payload) => ({
   payload,
 });
 
-//? provavelmente será apenas uma função de redirect ao clicar no botão?
+// ? provavelmente será apenas uma função de redirect ao clicar no botão?
 /* export const restartGame = (payload) => ({
   type: RESTART_GAME,
   payload,

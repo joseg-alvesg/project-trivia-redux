@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './styles/Login.module.css';
 import logo from '../images/logo-trivia.svg';
 
@@ -53,6 +54,12 @@ export default class Login extends Component {
             Play
           </button>
         </section>
+        <Link
+          to="/settings"
+          data-testid="btn-settings"
+        >
+          Configurações
+        </Link>
       </div>
     );
   }

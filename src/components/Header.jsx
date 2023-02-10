@@ -1,14 +1,17 @@
-import React from "react";
-import { MD5 } from "crypto-js";
+import React from 'react';
+import { MD5 } from 'crypto-js';
+import { connect } from 'react-redux';
 
 class Header extends React.Component {
   render() {
     return (
-      <div>
-      </div>
+      <div />
     );
   }
 }
 
+const mapStateToProps = (state) => ({
+  player: state.player,
+});
 
-export default (Header);
+export default connect(mapStateToProps)(Header);

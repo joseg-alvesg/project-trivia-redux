@@ -1,4 +1,15 @@
-body {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background-image: url('./images/background.svg');
+  height: 100vh;
+}
+
+/* body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -60,4 +71,4 @@ body {
   40%, 60% {
     transform: translate3d(4px, 0, 0);
   }
-}
+} */

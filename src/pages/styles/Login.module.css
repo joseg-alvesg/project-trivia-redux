@@ -20,7 +20,7 @@
 
 .loginContainer .input {
   align-items: center;
-  background-color: #fff;
+  background-color: white;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@
   background: #2fc18c;
   border: none;
   border-radius: 5px;
-  color: #fff;
+  color: white;
   cursor: pointer;
   font-size: 20px;
   font-weight: 800;

@@ -40,4 +40,12 @@ const mapStateToProps = (state) => ({
   player: state.player,
 });
 
+Header.propTypes = {
+  player: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    gravatarEmail: PropTypes.string.isRequired,
+    score: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
 export default connect(mapStateToProps)(Header);

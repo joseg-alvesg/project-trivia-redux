@@ -43,7 +43,7 @@ export const sessionTokenThunk = () => async (dispatch) => {
   dispatch(fetchSessionTokenLoading());
   try {
     const response = await tokenApiRequest();
-    await dispatch(fetchSessionTokenSuccess(response.token));
+    await dispatch(fetchSessionTokenSuccess({ token: response.token }));
     saveToken(response.token);
   } catch (error) {
     dispatch(fetchSessionTokenError(error));

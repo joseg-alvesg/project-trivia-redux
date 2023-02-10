@@ -1,12 +1,11 @@
 import {
   ADD_COUNTER,
   ADD_POINT,
-  // END_GAME,
-  // NEXT_QUESTION,
   SELECT_ANSWER,
   START_TIMER,
   STOP_TIMER,
 } from '../../constants';
+import INITIAL_STATE from '../../constants/initialState';
 
 const triviaReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -20,18 +19,6 @@ const triviaReducer = (state = INITIAL_STATE, action) => {
       ...state,
       score: state.score + action.payload,
     };
-    // ? provavelmente será apenas uma função de redirect ao clicar no botão?
-    // case END_GAME:
-    //   return {
-    //     ...state,
-    //     ...action.payload,
-    //   };
-    // ? provavelmente será apenas uma função de redirect ao clicar no botão?
-    // case NEXT_QUESTION:
-    //   return {
-    //     ...state,
-    //     ...action.payload,
-    //   };
   case QUESTION_RESULT:
     return {
       ...state,

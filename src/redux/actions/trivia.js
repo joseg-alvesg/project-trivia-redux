@@ -1,8 +1,6 @@
 import {
   ADD_COUNTER,
   ADD_POINT,
-  // END_GAME,
-  // NEXT_QUESTION,
   QUESTION_RESULT,
   SELECT_ANSWER,
   START_TIMER,
@@ -18,18 +16,6 @@ export const addPoint = (payload) => ({
   type: ADD_POINT,
   payload,
 });
-
-// ? provavelmente será apenas uma função de redirect ao clicar no botão?
-// export const endGame = (payload) => ({
-//   type: END_GAME,
-//   payload,
-// });
-
-// ? provavelmente será apenas uma função de redirect ao clicar no botão?
-// export const nextQuestion = (payload) => ({
-//   type: NEXT_QUESTION,
-//   payload,
-// });
 
 export const questionResult = (payload) => ({
   type: QUESTION_RESULT,

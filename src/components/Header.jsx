@@ -37,14 +37,14 @@ class Header extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  player: state.player,
+  player: state.saveLoginReducer.player,
 });
 
 Header.propTypes = {
   player: PropTypes.shape({
     name: PropTypes.string.isRequired,
     gravatarEmail: PropTypes.string.isRequired,
-    score: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
   }).isRequired,
 };
 

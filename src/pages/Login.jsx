@@ -1,9 +1,13 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import styles from './styles/Login.module.css';
 import logo from '../images/logo-trivia.svg';
+import { sessionTokenThunk } from '../redux/actions/services';
+import saveLogin from '../redux/actions/login';
 
-export default class Login extends Component {
+class Login extends Component {
   state = {
     email: '',
     name: '',
@@ -12,6 +16,13 @@ export default class Login extends Component {
 
   handleChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value }, this.validation);
+  };
+
+  handleClick = () => {
+    const { email, name } = this.state;
+    const { dispatch } = this.props;
+    dispatch(sessionTokenThunk());
+    dispatch(saveLogin({ email, name }));
   };
 
   validation = () => {
@@ -57,6 +68,7 @@ export default class Login extends Component {
         <Link
           to="/settings"
           data-testid="btn-settings"
+          onClick={ this.handleClick }
         >
           Configurações
         </Link>
@@ -64,3 +76,9 @@ export default class Login extends Component {
     );
   }
 }
+
+Login.propTypes = {
+  dispatch: PropTypes.func,
+}.isRequired;
+
+export default connect()(Login);

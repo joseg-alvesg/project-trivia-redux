@@ -11,7 +11,7 @@ const saveLoginReducer = (state = INITIAL_STATE, action) => {
   case SAVE_LOGIN:
     return {
       ...state,
-      ...payload,
+      ...action.payload,
     };
   default:
     return state;

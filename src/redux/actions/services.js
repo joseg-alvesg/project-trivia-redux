@@ -2,11 +2,13 @@ import {
   FETCH_QUESTION_ERROR,
   FETCH_QUESTION_LOADING,
   FETCH_QUESTION_SUCCESS,
+  FETCH_SESSION_TOKEN_ERROR,
+  FETCH_SESSION_TOKEN_LOADING,
+  FETCH_SESSION_TOKEN_SUCCESS,
 } from '../../constants';
 
-export const fetchQuestionLoading = (payload) => ({
+export const fetchQuestionLoading = () => ({
   type: FETCH_QUESTION_LOADING,
-  payload,
 });
 
 export const fetchQuestionSuccess = (payload) => ({
@@ -18,3 +20,21 @@ export const fetchQuestionError = (payload) => ({
   type: FETCH_QUESTION_ERROR,
   payload,
 });
+
+export const fetchSessionTokenLoading = () => ({
+  type: FETCH_SESSION_TOKEN_LOADING,
+});
+
+export const fetchSessionTokenSuccess = (payload) => ({
+  type: FETCH_SESSION_TOKEN_SUCCESS,
+  payload,
+});
+
+export const fetchSessionTokenError = (payload) => ({
+  type: FETCH_SESSION_TOKEN_ERROR,
+  payload,
+});
+
+// Thunk do SESSION TOKEN aqui
+
+// Thunk do QUESTION aqui

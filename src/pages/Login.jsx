@@ -53,6 +53,12 @@ export default class Login extends Component {
             Play
           </button>
         </section>
+        <button
+          type="button"
+          data-testid="btn-settings"
+        >
+          Configurações
+        </button>
       </div>
     );
   }

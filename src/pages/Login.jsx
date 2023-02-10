@@ -20,9 +20,10 @@ class Login extends Component {
 
   handleClick = () => {
     const { email, name } = this.state;
-    const { dispatch } = this.props;
+    const { dispatch, history } = this.props;
     dispatch(sessionTokenThunk());
     dispatch(saveLogin({ email, name }));
+    history.push('/game');
   };
 
   validation = () => {
@@ -61,6 +62,7 @@ class Login extends Component {
             type="button"
             data-testid="btn-play"
             disabled={ isDisabled }
+            onClick={ this.handleClick }
           >
             Play
           </button>
@@ -68,7 +70,6 @@ class Login extends Component {
         <Link
           to="/settings"
           data-testid="btn-settings"
-          onClick={ this.handleClick }
         >
           Configurações
         </Link>

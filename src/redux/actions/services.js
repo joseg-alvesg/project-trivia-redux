@@ -6,6 +6,8 @@ import {
   FETCH_SESSION_TOKEN_LOADING,
   FETCH_SESSION_TOKEN_SUCCESS,
 } from '../../constants';
+import { tokenApiRequest } from '../../helpers/services';
+import { saveToken } from '../../helpers/storage';
 
 export const fetchQuestionLoading = () => ({
   type: FETCH_QUESTION_LOADING,
@@ -36,5 +38,16 @@ export const fetchSessionTokenError = (payload) => ({
 });
 
 // TODO: criar thunk do SESSION TOKEN aqui
+
+export const sessionTokenThunk = () => async (dispatch) => {
+  dispatch(fetchSessionTokenLoading());
+  try {
+    const response = await tokenApiRequest();
+    await dispatch(fetchSessionTokenSuccess({ token: response.token }));
+    saveToken(response.token);
+  } catch (error) {
+    dispatch(fetchSessionTokenError(error));
+  }
+};
 
 // TODO: criar thunk do QUESTION aqui

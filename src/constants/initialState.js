@@ -25,6 +25,7 @@ const INITIAL_STATE = {
       incorrect_answers: [''],
     },
   ],
+  isLoading: false,
 };
 
 export default INITIAL_STATE;

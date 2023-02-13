@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Ranking extends Component {
   state = {
@@ -40,5 +41,13 @@ class Ranking extends Component {
 const mapStateToProps = (state) => ({
   ranking: state.triviaReducer.ranking,
 });
+
+Ranking.propTypes = {
+  ranking: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
+    picture: PropTypes.string.isRequired,
+  })).isRequired,
+};
 
 export default connect(mapStateToProps)(Ranking);

@@ -28,9 +28,9 @@ class Header extends React.Component {
     const { img, name, score } = this.state;
     return (
       <div>
-        <img src={ `https://www.gravatar.com/avatar/${img}` } alt={ name } />
-        <p>{name}</p>
-        <p>{score}</p>
+        <img data-testid="header-profile-picture" src={ `https://www.gravatar.com/avatar/${img}` } alt={ name } />
+        <p data-testid="header-player-name">{name}</p>
+        <p data-testid="header-score">{score}</p>
       </div>
     );
   }

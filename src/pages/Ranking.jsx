@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Ranking extends Component {
   render() {
     return (
-      <div>Ranking Mockup</div>
+      <div>
+        <Link to="/" data-testid="btn-go-home">Jogar novamente</Link>
+      </div>
     );
   }
 }

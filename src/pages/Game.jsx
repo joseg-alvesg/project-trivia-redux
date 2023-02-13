@@ -3,7 +3,8 @@ import { shape, func } from 'prop-types';
 import { questionApiRequest } from '../helpers/services';
 import { deleteKeyFromLocalStorage, getFromLocalStorage } from '../helpers/storage';
 // TODO: descomentar componente Header quando implementado e remover esse comentário
-import { /* Header, */ Question } from '../components';
+import Header from '../components/Header';
+import Question from '../components/Question';
 // ? import { connect } from 'react-redux';
 
 const CODE_TOKEN_NOT_FOUND = 3;
@@ -29,7 +30,7 @@ class Game extends Component {
   render() {
     return (
       <div>
-        {/* <Header /> */}
+        <Header />
         <Question { ...this.state } />
       </div>
     );

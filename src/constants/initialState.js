@@ -8,14 +8,9 @@ const INITIAL_STATE = {
   },
   ranking: [
     {
-      name: 'Samuel',
-      score: 2,
-      picture: 'https://www.gravatar.com/avatar/3d285b72cc8f77008e10e18dc7b6bf1a',
-    },
-    {
-      name: 'Kaue',
-      score: 5,
-      picture: 'https://www.gravatar.com/avatar/3d285b72cc8f77008e10e18dc7b6bf1a',
+      name: '',
+      score: 0,
+      picture: '',
     },
   ], // comente aqui
   response_code: 0, // Trivia API

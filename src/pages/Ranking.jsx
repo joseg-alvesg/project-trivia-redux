@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { getFromLocalStorage, saveToLocalStorage } from '../helpers/storage';
 
 class Ranking extends Component {
   state = {
@@ -16,7 +17,11 @@ class Ranking extends Component {
 
   getRanking = () => {
     const { ranking } = this.props;
-    return ranking.sort((a, b) => b.score - a.score);
+    const savedRanking = getFromLocalStorage('ranking')
+      ? getFromLocalStorage('ranking') : [];
+    const sortedRaking = [...ranking, ...savedRanking].sort((a, b) => b.score - a.score);
+    saveToLocalStorage('ranking', sortedRaking);
+    return sortedRaking;
   };
 
   render() {

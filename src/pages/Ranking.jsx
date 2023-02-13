@@ -7,6 +7,9 @@ class Ranking extends Component {
     return (
       <div>
         <Link to="/" data-testid="btn-go-home">Jogar novamente</Link>
+        <ul>
+          
+        </ul>
       </div>
     );
   }

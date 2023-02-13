@@ -1,18 +1,31 @@
 const INITIAL_STATE = {
-  token: '', // * session token da Trivia API
   player: {
     name: '',
-    gravatarEmail: '',
-    score: 0,
     assertions: 0,
+    score: 0,
+    gravatarEmail: '',
   },
   ranking: [
     {
-      name: '', // * nome_da_pessoa
+      name: '',
       score: 0,
-      picture: '', // * url_da_foto_no_gravatar
+      picture: '',
     },
   ],
+  response_code: 0,
+  response_message: '',
+  token: '',
+  results: [
+    {
+      category: '',
+      type: '',
+      difficulty: '',
+      question: '',
+      correct_answer: '',
+      incorrect_answers: [''],
+    },
+  ],
+  isLoading: false,
 };
 
 export default INITIAL_STATE;

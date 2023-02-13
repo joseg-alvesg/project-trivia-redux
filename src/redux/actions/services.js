@@ -7,7 +7,7 @@ import {
   FETCH_SESSION_TOKEN_SUCCESS,
 } from '../../constants';
 import { tokenApiRequest } from '../../helpers/services';
-import { saveToken } from '../../helpers/storage';
+import { saveToLocalStorage } from '../../helpers/storage';
 
 export const fetchQuestionLoading = () => ({
   type: FETCH_QUESTION_LOADING,
@@ -44,7 +44,7 @@ export const sessionTokenThunk = () => async (dispatch) => {
   try {
     const response = await tokenApiRequest();
     await dispatch(fetchSessionTokenSuccess({ token: response.token }));
-    saveToken(response.token);
+    saveToLocalStorage(token, response.token);
   } catch (error) {
     dispatch(fetchSessionTokenError(error));
   }

@@ -1,8 +1,3 @@
-// TODO: substituir o uso dessa função pela saveToLocalStorage na aplicação
-export const saveToken = (token) => {
-  localStorage.setItem('token', token);
-};
-
 export const saveToLocalStorage = (key, item) => localStorage
   .setItem(key, JSON.stringify(item));
 

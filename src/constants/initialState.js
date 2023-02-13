@@ -1,4 +1,5 @@
 const INITIAL_STATE = {
+  isLoading: false,
   player: {
     name: '',
     assertions: 0,
@@ -11,10 +12,10 @@ const INITIAL_STATE = {
       score: 0,
       picture: '',
     },
-  ],
-  response_code: 0,
-  response_message: '',
-  token: '',
+  ], // comente aqui
+  response_code: 0, // Trivia API
+  response_message: '', // Trivia API
+  token: '', // Trivia API
   results: [
     {
       category: '',
@@ -24,8 +25,7 @@ const INITIAL_STATE = {
       correct_answer: '',
       incorrect_answers: [''],
     },
-  ],
-  isLoading: false,
+  ], // Trivia API
 };
 
 export default INITIAL_STATE;

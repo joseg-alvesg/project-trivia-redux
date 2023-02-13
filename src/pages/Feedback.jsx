@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 
-class Question extends Component {
+class Feedback extends Component {
   render() {
     return (
-      <div>Question Mockup</div>
+      <div>Feedback</div>
     );
   }
 }
@@ -13,4 +13,4 @@ class Question extends Component {
 
 // const mapDispatchToProps = {};
 
-export default /* connect(mapStateToProps, mapDispatchToProps)( */Question/* ) */;
+export default /* connect(mapStateToProps, mapDispatchToProps)( */Feedback/* ) */;

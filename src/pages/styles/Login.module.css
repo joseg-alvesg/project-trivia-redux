@@ -1,0 +1,49 @@
+.loginContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.loginContainer section {
+  align-self: center;
+  height: 30%;
+  text-align: center;
+  width: 40%;
+}
+
+.image {
+  margin-bottom: 110px;
+}
+
+.loginContainer .input {
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.input input {
+  border: 1px solid #e1e5eb;
+  border-radius: 5px;
+  height: 24%;
+  padding-left: 10px;
+  width: 60%;
+}
+
+.input button {
+  background: #2fc18c;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 800;
+  height: 22%;
+  width: 60%;
+}

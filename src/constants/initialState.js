@@ -1,21 +1,14 @@
-const INITIAL_STATE = {
-  isLoading: false,
-  player: {
-    name: '',
-    assertions: 0,
-    score: 0,
-    gravatarEmail: '',
-  },
-  ranking: [
-    {
-      name: '',
-      score: 0,
-      picture: '',
-    },
-  ], // comente aqui
-  response_code: 0, // Trivia API
-  response_message: '', // Trivia API
-  token: '', // Trivia API
+export const PLAYER_INITIAL_STATE = {
+  name: '',
+  score: 0,
+  assertions: 0,
+  gravatarEmail: '',
+};
+
+export const GAME_INITIAL_STATE = {
+  token: '',
+  response_code: 0,
+  response_message: '',
   results: [
     {
       category: '',
@@ -25,7 +18,5 @@ const INITIAL_STATE = {
       correct_answer: '',
       incorrect_answers: [''],
     },
-  ], // Trivia API
+  ],
 };
-
-export default INITIAL_STATE;

@@ -1,10 +1,11 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import styles from './styles/Login.module.css';
+import { Link } from 'react-router-dom';
+import saveLogin from '../redux/actions/loginActions';
+import { fetchSessionToken } from '../redux/actions/servicesActions';
 import logo from '../images/logo-trivia.svg';
-import { fetchSessionToken, saveLogin } from '../redux/actions';
+import styles from './styles/Login.module.css';
 
 class Login extends Component {
   state = {
@@ -17,11 +18,11 @@ class Login extends Component {
     this.setState({ [name]: value }, this.validation);
   };
 
-  handleClick = () => {
+  handleClick = async () => {
     const { email, name } = this.state;
     const { dispatch, history } = this.props;
-    dispatch(fetchSessionToken());
     dispatch(saveLogin({ email, name }));
+    await dispatch(fetchSessionToken());
     history.push('/game');
   };
 

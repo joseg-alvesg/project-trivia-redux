@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { shape, func } from 'prop-types';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { requestQuestions } from '../helpers/services';
-import { deleteKeyFromLocalStorage, getFromLocalStorage } from '../helpers/storage';
 import Header from '../components/Header';
 import Question from '../components/Question';
 import { fetchQuestionSuccess } from '../redux/actions/servicesActions';
+import { deleteKeyFromLocalStorage, getFromLocalStorage } from '../helpers';
 import { CODE_TOKEN_NOT_FOUND, LOGIN_ROUTE, TOKEN_KEY } from '../constants';
 
 class Game extends Component {
@@ -34,7 +34,12 @@ class Game extends Component {
   }
 }
 
-Game.propTypes = { history: shape({ push: func }) }.isRequired;
+Game.propTypes = {
+  dispatch: PropTypes.func,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }),
+}.isRequired;
 
 // ? const mapStateToProps = (state) => ({});
 

@@ -5,9 +5,9 @@ import {
   FETCH_SESSION_TOKEN_ERROR,
   FETCH_SESSION_TOKEN_LOADING,
   FETCH_SESSION_TOKEN_SUCCESS,
+  TOKEN_KEY,
 } from '../../constants';
-import { requestToken } from '../../helpers/services';
-import { saveToLocalStorage } from '../../helpers/storage';
+import { requestToken, saveToLocalStorage } from '../../helpers';
 
 export const fetchQuestionLoading = () => ({
   type: FETCH_QUESTION_LOADING,
@@ -44,7 +44,7 @@ export const fetchSessionToken = () => async (dispatch) => {
   try {
     const response = await requestToken();
     dispatch(fetchSessionTokenSuccess(response));
-    saveToLocalStorage(token, response.token);
+    saveToLocalStorage(TOKEN_KEY, response.token);
   } catch (error) {
     dispatch(fetchSessionTokenError(error));
   }

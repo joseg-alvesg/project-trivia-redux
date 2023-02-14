@@ -16,10 +16,16 @@ class Ranking extends Component {
   }
 
   getRanking = () => {
-    const { ranking } = this.props;
+    const { player } = this.props;
+    const { name, score, gravatarEmailHash } = player;
+    const playerObj = {
+      name,
+      score,
+      picture: gravatarEmailHash,
+    };
     const savedRanking = getFromLocalStorage('ranking')
       ? getFromLocalStorage('ranking') : [];
-    const sortedRaking = [...ranking, ...savedRanking].sort((a, b) => b.score - a.score);
+    const sortedRaking = [...savedRanking, playerObj].sort((a, b) => b.score - a.score);
     saveToLocalStorage('ranking', sortedRaking);
     return sortedRaking;
   };
@@ -44,15 +50,15 @@ class Ranking extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  ranking: state.triviaReducer.ranking,
+  player: state.player,
 });
 
 Ranking.propTypes = {
-  ranking: PropTypes.arrayOf(PropTypes.shape({
+  player: PropTypes.shape({
     name: PropTypes.string.isRequired,
     score: PropTypes.number.isRequired,
-    picture: PropTypes.string.isRequired,
-  })).isRequired,
+    gravatarEmailHash: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default connect(mapStateToProps)(Ranking);

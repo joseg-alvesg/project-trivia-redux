@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import { shape, func } from 'prop-types';
-import { questionApiRequest } from '../helpers/services';
+import { connect } from 'react-redux';
+import { requestQuestions } from '../helpers/services';
 import { deleteKeyFromLocalStorage, getFromLocalStorage } from '../helpers/storage';
-// TODO: descomentar componente Header quando implementado e remover esse comentário
 import Header from '../components/Header';
 import Question from '../components/Question';
-// ? import { connect } from 'react-redux';
-
-const CODE_TOKEN_NOT_FOUND = 3;
-const LOGIN_ROUTE = '/';
-const TOKEN_KEY = 'token';
+import { fetchQuestionSuccess } from '../redux/actions/servicesActions';
+import { CODE_TOKEN_NOT_FOUND, LOGIN_ROUTE, TOKEN_KEY } from '../constants';
 
 class Game extends Component {
   componentDidMount() {
@@ -17,21 +14,21 @@ class Game extends Component {
   }
 
   fetchQuestions = async () => {
-    const { history } = this.props;
+    const { dispatch, history } = this.props;
     const token = getFromLocalStorage(TOKEN_KEY);
-    const questionsData = await questionApiRequest(token);
+    const questionsData = await requestQuestions(token);
     if (questionsData.response_code === CODE_TOKEN_NOT_FOUND) {
       history.push(LOGIN_ROUTE);
       deleteKeyFromLocalStorage(TOKEN_KEY);
     }
-    this.setState({ ...questionsData });
+    dispatch(fetchQuestionSuccess({ ...questionsData }));
   };
 
   render() {
     return (
       <div>
         <Header />
-        <Question { ...this.state } />
+        <Question />
       </div>
     );
   }
@@ -43,4 +40,4 @@ Game.propTypes = { history: shape({ push: func }) }.isRequired;
 
 // ? const mapDispatchToProps = {};
 
-export default /* connect(mapStateToProps, mapDispatchToProps)( */ Game;
+export default connect(/* mapStateToProps, mapDispatchToProps */)(Game);

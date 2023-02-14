@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import styles from './styles/Login.module.css';
 import logo from '../images/logo-trivia.svg';
-import { sessionTokenThunk } from '../redux/actions/services';
-import saveLogin from '../redux/actions/login';
+import { fetchSessionToken, saveLogin } from '../redux/actions';
 
 class Login extends Component {
   state = {
@@ -21,7 +20,7 @@ class Login extends Component {
   handleClick = () => {
     const { email, name } = this.state;
     const { dispatch, history } = this.props;
-    dispatch(sessionTokenThunk());
+    dispatch(fetchSessionToken());
     dispatch(saveLogin({ email, name }));
     history.push('/game');
   };

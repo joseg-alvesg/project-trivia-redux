@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import styles from './styles/Login.module.css';
+import { Link } from 'react-router-dom';
+import saveLogin from '../redux/actions/loginActions';
+import { fetchSessionToken } from '../redux/actions/servicesActions';
 import logo from '../images/logo-trivia.svg';
-import { sessionTokenThunk } from '../redux/actions/services';
-import saveLogin from '../redux/actions/login';
+import styles from './styles/Login.module.css';
 
 class Login extends Component {
   state = {
@@ -18,11 +18,11 @@ class Login extends Component {
     this.setState({ [name]: value }, this.validation);
   };
 
-  handleClick = () => {
+  handleClick = async () => {
     const { email, name } = this.state;
     const { dispatch, history } = this.props;
-    dispatch(sessionTokenThunk());
     dispatch(saveLogin({ email, name }));
+    await dispatch(fetchSessionToken());
     history.push('/game');
   };
 
@@ -45,7 +45,7 @@ class Login extends Component {
             name="email"
             id="email"
             value={ email }
-            placeholder="Qual é o sei email do gravatar"
+            placeholder="Qual é o seu email do gravatar"
             onChange={ this.handleChange }
             data-testid="input-gravatar-email"
           />

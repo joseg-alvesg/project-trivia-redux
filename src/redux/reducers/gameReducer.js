@@ -18,6 +18,7 @@ const gameReducer = (state = GAME_INITIAL_STATE, action) => {
     return {
       ...state,
       token: action.payload.token,
+      isLoading: false,
     };
   case FETCH_QUESTION_SUCCESS:
     return {

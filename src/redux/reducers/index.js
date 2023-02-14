@@ -1,3 +1,7 @@
-export { default as login } from './login';
-export { default as rootReducer } from './rootReducer';
-export { default as trivia } from './trivia';
+import { combineReducers } from 'redux';
+import gameReducer from './gameReducer';
+import loginReducer from './loginReducer';
+
+const rootReducer = combineReducers({ player: loginReducer, game: gameReducer });
+
+export default rootReducer;

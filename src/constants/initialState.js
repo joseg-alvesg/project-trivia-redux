@@ -2,7 +2,7 @@ export const PLAYER_INITIAL_STATE = {
   name: '',
   score: 0,
   assertions: 0,
-  gravatarEmail: '',
+  gravatarEmailHash: '',
 };
 
 export const GAME_INITIAL_STATE = {

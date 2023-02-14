@@ -7,7 +7,7 @@ const loginReducer = (state = PLAYER_INITIAL_STATE, action) => {
     return {
       ...state,
       name: action.payload.name,
-      gravatarEmail: MD5(action.payload.email).toString(),
+      gravatarEmailHash: MD5(action.payload.email).toString(),
     };
   default:
     return state;

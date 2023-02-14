@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { getFromLocalStorage, saveToLocalStorage } from '../helpers/storage';
+import { GRAVATAR_ENDPOINT } from '../constants';
 
 class Ranking extends Component {
   state = {
@@ -38,9 +39,9 @@ class Ranking extends Component {
         <ul>
           { ranking.map((item, index) => (
             <li key={ index }>
+              <img src={ `${GRAVATAR_ENDPOINT}${item.picture}` } alt={ item.name } />
               <p data-testid={ `player-name-${index}` }>{item.name}</p>
               <p data-testid={ `player-score-${index}` }>{item.score}</p>
-              <img src={ item.picture } alt={ item.name } />
             </li>
           )) }
         </ul>

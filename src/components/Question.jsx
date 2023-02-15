@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import mixAnswers from '../helpers/gameFunctions';
+import handleSort from '../helpers/gameFunctions';
 
 class Question extends Component {
   render() {
@@ -17,7 +17,7 @@ class Question extends Component {
         </section>
         <section>
           <div>
-            {mixAnswers(questions[assertions]).map((quest, index) => (
+            {handleSort(questions[assertions]).map((quest, index) => (
               <section key={ index } data-testid="answer-options">
                 <button
                   type="button"

@@ -1,6 +1,6 @@
 import { SORT_FACTOR } from '../constants';
 
-const mixAnswers = (questions) => {
+const handleSort = (questions) => {
   const mixedAnswers = [];
   [questions].forEach((question) => {
     mixedAnswers.push({ index: 0, answer: question.correct_answer });
@@ -19,4 +19,4 @@ const mixAnswers = (questions) => {
 // TODO: export const handleScore = () => {};
 // TODO: export const handleTimer = () => {};
 
-export default handleAnswerMix;
+export default handleSort;

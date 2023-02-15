@@ -41,11 +41,13 @@ const gameReducer = (state = GAME_INITIAL_STATE, action) => {
     return {
       ...state,
       timeRunning: true,
+      finalAnswer: false,
     };
   case STOP_TIMER:
     return {
       ...state,
       timeRunning: false,
+      finalAnswer: true,
     };
     // ! utiluizar o estado global dentro do timer estava
     // ! gerando um loop de renderização das respostas sempre

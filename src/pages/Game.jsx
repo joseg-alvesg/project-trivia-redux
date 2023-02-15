@@ -20,6 +20,7 @@ class Game extends Component {
     if (questionsData.response_code === CODE_TOKEN_NOT_FOUND) {
       history.push(LOGIN_ROUTE);
       deleteKeyFromLocalStorage(TOKEN_KEY);
+      return;
     }
     dispatch(fetchQuestionSuccess({ ...questionsData }));
   };

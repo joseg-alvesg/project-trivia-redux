@@ -1,17 +1,15 @@
 import { SORT_FACTOR } from '../constants';
 
 const handleSort = (questions) => {
-  const mixedAnswers = [];
+  const answers = [];
   [questions].forEach((question) => {
-    mixedAnswers.push({ index: 0, answer: question.correct_answer });
+    answers.push({ index: 0, answer: question.correct_answer });
     question.incorrect_answers.forEach((incorrectAnswer, index) => {
-      mixedAnswers.push({ index: index + 1, answer: incorrectAnswer });
+      answers.push({ index: index + 1, answer: incorrectAnswer });
     });
-    mixedAnswers.sort(() => Math.random() - SORT_FACTOR);
+    answers.sort(() => Math.random() - SORT_FACTOR);
   });
-
-  console.log(mixedAnswers);
-  return mixedAnswers;
+  return answers;
 };
 
 // TODO: export const handleNextBtn = () => {};

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import handleSort from '../helpers/gameFunctions';
 import { stopTimer } from '../redux/actions/gameActions';
 import Timer from './Timer';
+import styles from './styles/Questions.module.css';
 
 class Question extends Component {
   hancleClick = () => {
@@ -12,7 +13,7 @@ class Question extends Component {
   };
 
   render() {
-    const { questions, counter, timeRunning } = this.props;
+    const { questions, counter, timeRunning, finalAnswer } = this.props;
     return (
       <main>
         <section>
@@ -30,6 +31,9 @@ class Question extends Component {
                   type="button"
                   onClick={ this.hancleClick }
                   disabled={ !timeRunning }
+                  className={ (finalAnswer && (questions[counter]
+                    .correct_answer === quest.answer ? styles
+                      .correct_answer : styles.wrong_answer)) || 'desabilitado' }
                   data-testid={ questions[counter].correct_answer === quest
                     .answer ? 'correct-answer' : `wrong-answer${index}` }
                 >
@@ -54,6 +58,7 @@ const mapStateToProps = (state) => ({
   counter: state.game.counter,
   timer: state.game.timer,
   timeRunning: state.game.timeRunning,
+  finalAnswer: state.game.finalAnswer,
 });
 
 // const mapDispatchToProps = {};

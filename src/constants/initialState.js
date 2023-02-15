@@ -6,6 +6,9 @@ export const PLAYER_INITIAL_STATE = {
 };
 
 export const GAME_INITIAL_STATE = {
+  timeRunning: false,
+  timer: 30,
+  counter: 0,
   token: '',
   response_code: 0,
   response_message: '',

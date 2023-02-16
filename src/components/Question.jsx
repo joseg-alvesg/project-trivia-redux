@@ -35,7 +35,7 @@ class Question extends Component {
           <div data-testid="question-text">{questions[counter].question}</div>
         </section>
         <section>
-          <Timer onclick={ this.hancleClick } />
+          { !finalAnswer && <Timer onclick={ this.hancleClick } /> }
         </section>
         <section>
           <div>

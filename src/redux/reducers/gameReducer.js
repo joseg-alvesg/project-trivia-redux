@@ -1,6 +1,7 @@
 import {
   ADD_COUNTER,
   ADD_POINT,
+  COUNTER_LIMIT,
   FETCH_QUESTION_SUCCESS,
   FETCH_SESSION_TOKEN_LOADING,
   FETCH_SESSION_TOKEN_SUCCESS,
@@ -19,7 +20,10 @@ const gameReducer = (state = GAME_INITIAL_STATE, action) => {
   case FETCH_QUESTION_SUCCESS:
     return { ...state, ...action.payload };
   case ADD_COUNTER:
-    return { ...state, assertions: state.assertions + action.payload };
+    return {
+      ...state,
+      counter: state.counter === COUNTER_LIMIT ? COUNTER_LIMIT : state.counter + 1,
+    };
   case ADD_POINT:
     return { ...state, score: state.score + action.payload };
   case START_TIMER:

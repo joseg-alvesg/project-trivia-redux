@@ -5,7 +5,7 @@ import handleSort from '../helpers/gameFunctions';
 import { stopTimer } from '../redux/actions/gameActions';
 import Timer from './Timer';
 import styles from './styles/Questions.module.css';
-import { incrementAssertions, incrementScore } from '../redux/actions/loginActions';
+import { incrementScore } from '../redux/actions/loginActions';
 import { DIFICULTY_POINTS, SCORE_SUM_VALUE } from '../constants';
 
 class Question extends Component {

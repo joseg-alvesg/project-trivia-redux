@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { playAgain } from '../redux/actions/gameActions';
 
 class PlayAgainButton extends Component {
@@ -18,5 +19,9 @@ class PlayAgainButton extends Component {
     );
   }
 }
+
+PlayAgainButton.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
 
 export default connect()(PlayAgainButton);

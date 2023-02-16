@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import { addCounter, startTimer } from '../redux/actions/gameActions';
 import { COUNTER_LIMIT } from '../constants';
-import { Redirect } from 'react-router-dom';
 
 class NextButtom extends Component {
   state = {
@@ -11,7 +11,7 @@ class NextButtom extends Component {
   };
 
   hanleClick = () => {
-    const { dispatch, counter, history } = this.props;
+    const { dispatch, counter } = this.props;
     if (counter === COUNTER_LIMIT) {
       this.setState({
         redirect: true,

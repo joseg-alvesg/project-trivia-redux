@@ -11,3 +11,7 @@ export const SAVE_LOGIN = 'SAVE_LOGIN';
 export const SELECT_ANSWER = 'SELECT_ANSWER';
 export const START_TIMER = 'START_TIMER';
 export const STOP_TIMER = 'STOP_TIMER';
+export const DECREMENT_TIMER = 'DECREMENT_TIMER';
+export const INCREMENT_SCORE = 'INCREMENT_SCORE';
+export const REST_TIMER = 'REST_TIMER';
+export const PLAY_AGAIN = 'PLAY_AGAIN';

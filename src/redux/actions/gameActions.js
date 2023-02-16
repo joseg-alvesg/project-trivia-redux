@@ -2,6 +2,7 @@ import {
   ADD_COUNTER,
   ADD_POINT,
   QUESTION_RESULT,
+  REST_TIMER,
   SELECT_ANSWER,
   START_TIMER,
   STOP_TIMER,
@@ -33,6 +34,11 @@ export const startTimer = () => ({
 
 export const stopTimer = () => ({
   type: STOP_TIMER,
+});
+
+export const restTimer = (payload) => ({
+  type: REST_TIMER,
+  payload,
 });
 
 // ! utiluizar o estado global dentro do timer estava

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import PlayAgainButton from '../components/PlayAgainButton';
 
 class Feedback extends Component {
   render() {
@@ -25,7 +26,7 @@ class Feedback extends Component {
           {' '}
           pontos
         </p>
-        <Link to="/" data-testid="btn-play-again">Jogar novamente</Link>
+        <PlayAgainButton />
         <Link to="/ranking" data-testid="btn-ranking">Ver ranking</Link>
       </div>
     );

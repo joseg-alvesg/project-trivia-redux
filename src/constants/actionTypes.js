@@ -14,3 +14,4 @@ export const STOP_TIMER = 'STOP_TIMER';
 export const DECREMENT_TIMER = 'DECREMENT_TIMER';
 export const INCREMENT_SCORE = 'INCREMENT_SCORE';
 export const REST_TIMER = 'REST_TIMER';
+export const PLAY_AGAIN = 'PLAY_AGAIN';

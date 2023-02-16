@@ -6,6 +6,7 @@ import {
   SELECT_ANSWER,
   START_TIMER,
   STOP_TIMER,
+  PLAY_AGAIN,
 } from '../../constants';
 
 export const addCounter = () => ({
@@ -40,6 +41,9 @@ export const restTimer = (payload) => ({
   payload,
 });
 
+export const playAgain = () => ({
+  type: PLAY_AGAIN,
+});
 // ! utiluizar o estado global dentro do timer estava
 // ! gerando um loop de renderização das respostas sempre
 // ! triggando um novo "sorteio" das respostas

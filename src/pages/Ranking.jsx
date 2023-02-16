@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { getFromLocalStorage, saveToLocalStorage } from '../helpers/storage';
 import { GRAVATAR_ENDPOINT } from '../constants';
+import PlayAgainButton from '../components/PlayAgainButton';
 
 class Ranking extends Component {
   state = {
@@ -36,7 +36,7 @@ class Ranking extends Component {
     return (
       <div>
         <h1 data-testid="ranking-title">Ranking</h1>
-        <Link to="/" data-testid="btn-go-home">Jogar novamente</Link>
+        <PlayAgainButton dataTestId="btn-go-home" />
         <ul>
           { ranking.map((item, index) => (
             <li key={ index }>

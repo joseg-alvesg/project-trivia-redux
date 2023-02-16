@@ -5,6 +5,7 @@ import {
   FETCH_QUESTION_SUCCESS,
   FETCH_SESSION_TOKEN_LOADING,
   FETCH_SESSION_TOKEN_SUCCESS,
+  PLAY_AGAIN,
   REST_TIMER,
   START_TIMER,
   STOP_TIMER,
@@ -32,6 +33,8 @@ const gameReducer = (state = GAME_INITIAL_STATE, action) => {
     return { ...state, timeRunning: false, finalAnswer: true };
   case REST_TIMER:
     return { ...state, timer: action.payload };
+  case PLAY_AGAIN:
+    return { ...GAME_INITIAL_STATE };
   default:
     return state;
   }

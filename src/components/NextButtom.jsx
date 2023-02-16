@@ -1,26 +1,34 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addCounter, startTimer, stopTimer } from '../redux/actions/gameActions';
+import { addCounter, resetTimer, startTimer } from '../redux/actions/gameActions';
 
 class NextButtom extends Component {
   hanleClick = () => {
     const { dispatch } = this.props;
     dispatch(addCounter(1));
-    dispatch(stopTimer());
-    dispatch(startTimer());
   };
 
   render() {
+    const { finalAnswer } = this.props;
     return (
-      <button
-        type="buttom"
-        data-testid="btn-next"
-        onClick={ this.hanleClick }
-      >
-        Próxima
-      </button>
+      <div>
+        {
+          finalAnswer
+          && <button
+            type="buttom"
+            data-testid="btn-next"
+            onClick={ this.hanleClick }
+          >
+            Próxima
+          </button>
+        }
+      </div>
     );
   }
 }
 
-export default connect()(NextButtom);
+const mapStateToProps = (state) => ({
+  finalAnswer: state.game.finalAnswer,
+});
+
+export default connect(mapStateToProps)(NextButtom);

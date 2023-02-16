@@ -5,7 +5,6 @@ import {
   SELECT_ANSWER,
   START_TIMER,
   STOP_TIMER,
-  RESET_TIMER,
 } from '../../constants';
 
 export const addCounter = (payload) => ({
@@ -34,10 +33,6 @@ export const startTimer = () => ({
 
 export const stopTimer = () => ({
   type: STOP_TIMER,
-});
-
-export const resetTimer = () => ({
-  type: RESET_TIMER,
 });
 
 // ! utiluizar o estado global dentro do timer estava

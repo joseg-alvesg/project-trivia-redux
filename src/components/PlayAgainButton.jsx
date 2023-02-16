@@ -9,7 +9,7 @@ class PlayAgainButton extends Component {
     const { dispatch, dataTestId } = this.props;
     return (
       <Link
-        data-testid={dataTestId}
+        data-testid={ dataTestId }
         to="/"
         onClick={ () => dispatch(playAgain()) }
       >
@@ -22,6 +22,7 @@ class PlayAgainButton extends Component {
 
 PlayAgainButton.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  dataTestId: PropTypes.string.isRequired,
 };
 
 export default connect()(PlayAgainButton);

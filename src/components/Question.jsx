@@ -5,7 +5,7 @@ import handleSort from '../helpers/gameFunctions';
 import { stopTimer } from '../redux/actions/gameActions';
 import Timer from './Timer';
 import styles from './styles/Questions.module.css';
-import { incrementScore } from '../redux/actions/loginActions';
+import { incrementAssertions, incrementScore } from '../redux/actions/loginActions';
 import { DIFICULTY_POINTS, SCORE_SUM_VALUE } from '../constants';
 
 class Question extends Component {
@@ -22,8 +22,8 @@ class Question extends Component {
     if (correctAnswer === value) {
       const dificulty = questions[counter].difficulty;
       score += SCORE_SUM_VALUE + (DIFICULTY_POINTS[dificulty] * timer);
+      dispatch(incrementScore(score));
     }
-    dispatch(incrementScore(score));
   };
 
   render() {

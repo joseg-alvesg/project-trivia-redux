@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import saveLogin from '../redux/actions/loginActions';
+import { saveLogin } from '../redux/actions/loginActions';
 import { fetchSessionToken } from '../redux/actions/servicesActions';
 import logo from '../images/logo-trivia.svg';
 import styles from './styles/Login.module.css';

@@ -1,8 +1,11 @@
-import { SAVE_LOGIN } from '../../constants';
+import { INCREMENT_SCORE, SAVE_LOGIN } from '../../constants';
 
-const saveLogin = (payload) => ({
+export const saveLogin = (payload) => ({
   type: SAVE_LOGIN,
   payload,
 });
 
-export default saveLogin;
+export const incrementScore = (payload) => ({
+  type: INCREMENT_SCORE,
+  payload,
+});

@@ -29,7 +29,7 @@ const mapStateToProps = (state) => ({
 
 NextButtom.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  finalAnswer: PropTypes.string.isRequired,
+  finalAnswer: PropTypes.bool.isRequired,
 };
 
 export default connect(mapStateToProps)(NextButtom);

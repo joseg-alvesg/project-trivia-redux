@@ -6,10 +6,10 @@ import { playAgain } from '../redux/actions/gameActions';
 
 class PlayAgainButton extends Component {
   render() {
-    const { dispatch } = this.props;
+    const { dispatch, dataTestId } = this.props;
     return (
       <Link
-        data-testid="btn-play-again"
+        data-testid={dataTestId}
         to="/"
         onClick={ () => dispatch(playAgain()) }
       >

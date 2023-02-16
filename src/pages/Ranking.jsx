@@ -36,7 +36,7 @@ class Ranking extends Component {
     return (
       <div>
         <h1 data-testid="ranking-title">Ranking</h1>
-        <PlayAgainButton />
+        <PlayAgainButton dataTestId="btn-go-home" />
         <ul>
           { ranking.map((item, index) => (
             <li key={ index }>

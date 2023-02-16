@@ -1,5 +1,5 @@
 import { MD5 } from 'crypto-js';
-import { PLAYER_INITIAL_STATE, SAVE_LOGIN } from '../../constants';
+import { INCREMENT_SCORE, PLAYER_INITIAL_STATE, SAVE_LOGIN } from '../../constants';
 
 const loginReducer = (state = PLAYER_INITIAL_STATE, action) => {
   switch (action.type) {
@@ -8,6 +8,11 @@ const loginReducer = (state = PLAYER_INITIAL_STATE, action) => {
       ...state,
       name: action.payload.name,
       gravatarEmailHash: MD5(action.payload.email).toString(),
+    };
+  case INCREMENT_SCORE:
+    return {
+      ...state,
+      score: state.score + action.payload,
     };
   default:
     return state;

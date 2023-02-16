@@ -30,7 +30,7 @@ const gameReducer = (state = GAME_INITIAL_STATE, action) => {
   case ADD_COUNTER:
     return {
       ...state,
-      assertions: state.assertions + action.payload,
+      counter: state.counter + action.payload,
     };
   case ADD_POINT:
     return {

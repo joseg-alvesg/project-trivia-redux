@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import PlayAgainButton from '../components/PlayAgainButton';
+import { FEEDBACK_ASSERTIONS } from '../constants';
 
 class Feedback extends Component {
   render() {
@@ -15,7 +16,7 @@ class Feedback extends Component {
         <h1
           data-testid="feedback-text"
         >
-          {assertions < 3 ? 'Could be better...' : 'Well Done!'}
+          {assertions < FEEDBACK_ASSERTIONS ? 'Could be better...' : 'Well Done!'}
         </h1>
         <p>
           Você acertou

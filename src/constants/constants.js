@@ -7,3 +7,4 @@ export const TIMER_INTERVAL = 1000;
 export const DIFICULTY_POINTS = { hard: 3, medium: 2, easy: 1 };
 export const SCORE_SUM_VALUE = 10;
 export const COUNTER_LIMIT = 4;
+export const FEEDBACK_ASSERTIONS = 3;

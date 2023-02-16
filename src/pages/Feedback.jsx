@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import PlayAgainButton from '../components/PlayAgainButton';
@@ -13,6 +12,11 @@ class Feedback extends Component {
     return (
       <div>
         <Header />
+        <h1
+          data-testid="feedback-text"
+        >
+          {assertions < 3 ? 'Could be better...' : 'Well Done!'}
+        </h1>
         <p>
           Você acertou
           {' '}

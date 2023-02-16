@@ -66,7 +66,7 @@ const GRAVATAR_EMAIL = 'fenrock@triviaemail.com'
   });
 
   it('Verifica se as informações de usuario são salvas no estado global', async () => {
-    const {history, store} = renderWithRouterAndRedux(<App />);
+    const {store} = renderWithRouterAndRedux(<App />);
 
     const btnPlay = screen.getByTestId('btn-play');
     const inputPlayerName = screen.getByTestId('input-player-name');

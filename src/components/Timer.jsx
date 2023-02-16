@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { TIMER_INTERVAL } from '../constants';
-import { startTimer, stopTimer } from '../redux/actions/gameActions';
+import { restTimer, startTimer, stopTimer } from '../redux/actions/gameActions';
 
 class Timer extends Component {
   state = {
@@ -25,6 +25,7 @@ class Timer extends Component {
 
     if (timeRunning === false) {
       clearInterval(this.timer);
+      dispatch(restTimer(timer));
     }
 
     if (timer === 0) {

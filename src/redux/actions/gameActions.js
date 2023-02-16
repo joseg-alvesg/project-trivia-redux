@@ -7,9 +7,8 @@ import {
   STOP_TIMER,
 } from '../../constants';
 
-export const addCounter = (payload) => ({
+export const addCounter = () => ({
   type: ADD_COUNTER,
-  payload,
 });
 
 export const addPoint = (payload) => ({

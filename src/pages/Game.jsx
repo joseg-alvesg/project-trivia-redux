@@ -7,6 +7,7 @@ import Question from '../components/Question';
 import { fetchQuestionSuccess } from '../redux/actions/servicesActions';
 import { deleteKeyFromLocalStorage, getFromLocalStorage } from '../helpers';
 import { CODE_TOKEN_NOT_FOUND, LOGIN_ROUTE, TOKEN_KEY } from '../constants';
+import NextButtom from '../components/NextButtom';
 
 class Game extends Component {
   componentDidMount() {
@@ -30,6 +31,7 @@ class Game extends Component {
       <div>
         <Header />
         <Question />
+        <NextButtom />
       </div>
     );
   }

@@ -21,7 +21,7 @@ class Question extends Component {
           <div data-testid="question-text">{questions[counter].question}</div>
         </section>
         <section>
-          <Timer />
+          { !finalAnswer && <Timer /> }
         </section>
         <section>
           <div>

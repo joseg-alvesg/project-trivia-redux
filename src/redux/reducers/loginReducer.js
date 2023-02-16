@@ -14,6 +14,7 @@ const loginReducer = (state = PLAYER_INITIAL_STATE, action) => {
     return {
       ...state,
       score: state.score + action.payload,
+      assertions: state.assertions + 1,
     };
   case PLAY_AGAIN:
     return {

@@ -22,8 +22,8 @@ class Question extends Component {
     if (correctAnswer === value) {
       const dificulty = questions[counter].difficulty;
       score += SCORE_SUM_VALUE + (DIFICULTY_POINTS[dificulty] * timer);
+      dispatch(incrementScore(score));
     }
-    dispatch(incrementScore(score));
   };
 
   render() {

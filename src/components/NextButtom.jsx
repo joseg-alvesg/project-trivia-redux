@@ -1,9 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class NextButtom extends Component {
   render() {
-    return(
-
+    return (
+      <button
+        type="buttom"
+        data-testid="btn-next"
+        onClick={ this.hanleClick }
+      >
+        Próxima
+      </button>
     );
   }
 }

@@ -1,18 +1,26 @@
-const INITIAL_STATE = {
-  token: '', // * session token da Trivia API
-  player: {
-    name: '',
-    gravatarEmail: '',
-    score: 0,
-    assertions: 0,
-  },
-  ranking: [
+export const PLAYER_INITIAL_STATE = {
+  name: '',
+  score: 0,
+  assertions: 0,
+  gravatarEmailHash: '',
+};
+
+export const GAME_INITIAL_STATE = {
+  timeRunning: false,
+  finalAnswer: false,
+  timer: 30,
+  counter: 0,
+  token: '',
+  response_code: 0,
+  response_message: '',
+  results: [
     {
-      name: '', // * nome_da_pessoa
-      score: 0,
-      picture: '', // * url_da_foto_no_gravatar
+      category: '',
+      type: '',
+      difficulty: '',
+      question: '',
+      correct_answer: '',
+      incorrect_answers: [''],
     },
   ],
 };
-
-export default INITIAL_STATE;

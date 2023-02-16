@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import styles from './styles/Login.module.css';
+import { saveLogin } from '../redux/actions/loginActions';
+import { fetchSessionToken } from '../redux/actions/servicesActions';
 import logo from '../images/logo-trivia.svg';
+import styles from './styles/Login.module.css';
 
-export default class Login extends Component {
+class Login extends Component {
   state = {
     email: '',
     name: '',
@@ -12,6 +16,14 @@ export default class Login extends Component {
 
   handleChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value }, this.validation);
+  };
+
+  handleClick = async () => {
+    const { email, name } = this.state;
+    const { dispatch, history } = this.props;
+    dispatch(saveLogin({ email, name }));
+    await dispatch(fetchSessionToken());
+    history.push('/game');
   };
 
   validation = () => {
@@ -33,7 +45,7 @@ export default class Login extends Component {
             name="email"
             id="email"
             value={ email }
-            placeholder="Qual é o sei email do gravatar"
+            placeholder="Qual é o seu email do gravatar"
             onChange={ this.handleChange }
             data-testid="input-gravatar-email"
           />
@@ -50,6 +62,7 @@ export default class Login extends Component {
             type="button"
             data-testid="btn-play"
             disabled={ isDisabled }
+            onClick={ this.handleClick }
           >
             Play
           </button>
@@ -64,3 +77,9 @@ export default class Login extends Component {
     );
   }
 }
+
+Login.propTypes = {
+  dispatch: PropTypes.func,
+}.isRequired;
+
+export default connect()(Login);

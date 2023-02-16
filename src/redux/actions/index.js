@@ -1,3 +1,3 @@
-export { default as saveLogin } from './login';
-export * from './trivia';
-export * from './services';
+export * from './loginActions';
+export * from './gameActions';
+export * from './servicesActions';

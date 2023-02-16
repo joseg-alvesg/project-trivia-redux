@@ -7,7 +7,7 @@ class Header extends React.Component {
   render() {
     const { gravatarEmailHash, name, score } = this.props;
     return (
-      <div>
+      <header>
         <img
           data-testid="header-profile-picture"
           src={ `${GRAVATAR_ENDPOINT}${gravatarEmailHash}` }

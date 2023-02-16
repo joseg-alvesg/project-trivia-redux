@@ -25,11 +25,13 @@ class NextButtom extends Component {
 
 const mapStateToProps = (state) => ({
   finalAnswer: state.game.finalAnswer,
+  counter: state.game.counter,
 });
 
 NextButtom.propTypes = {
   dispatch: PropTypes.func.isRequired,
   finalAnswer: PropTypes.bool.isRequired,
+  counter: PropTypes.number.isRequired,
 };
 
 export default connect(mapStateToProps)(NextButtom);

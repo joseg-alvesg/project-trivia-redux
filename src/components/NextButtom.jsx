@@ -6,7 +6,7 @@ import { addCounter, startTimer } from '../redux/actions/gameActions';
 class NextButtom extends Component {
   hanleClick = () => {
     const { dispatch } = this.props;
-    dispatch(addCounter(1));
+    dispatch(addCounter());
     dispatch(startTimer());
   };
 

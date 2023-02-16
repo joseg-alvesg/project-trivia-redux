@@ -2,18 +2,32 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addCounter, startTimer } from '../redux/actions/gameActions';
+import { COUNTER_LIMIT } from '../constants';
+import { Redirect } from 'react-router-dom';
 
 class NextButtom extends Component {
+  state = {
+    redirect: false,
+  };
+
   hanleClick = () => {
-    const { dispatch } = this.props;
-    dispatch(addCounter());
-    dispatch(startTimer());
+    const { dispatch, counter, history } = this.props;
+    if (counter === COUNTER_LIMIT) {
+      this.setState({
+        redirect: true,
+      });
+    } else {
+      dispatch(addCounter());
+      dispatch(startTimer());
+    }
   };
 
   render() {
     const { finalAnswer } = this.props;
+    const { redirect } = this.state;
     return (
       <div>
+        { redirect && <Redirect to="/feedback" /> }
         {
           finalAnswer
             && <button data-testid="btn-next" onClick={ this.hanleClick }>Próxima</button>

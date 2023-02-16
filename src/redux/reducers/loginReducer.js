@@ -1,5 +1,6 @@
 import { MD5 } from 'crypto-js';
-import { INCREMENT_SCORE, PLAYER_INITIAL_STATE, SAVE_LOGIN } from '../../constants';
+import {
+  INCREMENT_SCORE, PLAYER_INITIAL_STATE, PLAY_AGAIN, SAVE_LOGIN } from '../../constants';
 
 const loginReducer = (state = PLAYER_INITIAL_STATE, action) => {
   switch (action.type) {
@@ -14,6 +15,11 @@ const loginReducer = (state = PLAYER_INITIAL_STATE, action) => {
       ...state,
       score: state.score + action.payload,
     };
+  case PLAY_AGAIN:
+    return {
+      ...PLAYER_INITIAL_STATE,
+    };
+
   default:
     return state;
   }

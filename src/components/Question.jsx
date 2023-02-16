@@ -5,11 +5,25 @@ import handleSort from '../helpers/gameFunctions';
 import { stopTimer } from '../redux/actions/gameActions';
 import Timer from './Timer';
 import styles from './styles/Questions.module.css';
+import { incrementScore } from '../redux/actions/loginActions';
+import { DIFICULTY_POINTS, SCORE_SUM_VALUE } from '../constants';
 
 class Question extends Component {
-  hancleClick = () => {
+  hancleClick = ({ target: { innerHTML } }) => {
     const { dispatch } = this.props;
     dispatch(stopTimer());
+    this.askAnswer(innerHTML);
+  };
+
+  askAnswer = (value) => {
+    const { questions, counter, dispatch, timer } = this.props;
+    const { correct_answer: correctAnswer } = questions[counter];
+    let score = 0;
+    if (correctAnswer === value) {
+      const dificulty = questions[counter].difficulty;
+      score += SCORE_SUM_VALUE + (DIFICULTY_POINTS[dificulty] * timer);
+    }
+    dispatch(incrementScore(score));
   };
 
   render() {
@@ -21,7 +35,7 @@ class Question extends Component {
           <div data-testid="question-text">{questions[counter].question}</div>
         </section>
         <section>
-          <Timer />
+          <Timer onclick={ this.hancleClick } />
         </section>
         <section>
           <div>
